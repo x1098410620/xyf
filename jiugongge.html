@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100%;
+            height:100%;
+            position: relative;
+        }
+        div button {
+            width: 100px;
+            height: 100px;
+            background-color: purple;
+            /*position: absolute;*/
+
+        }
+    </style>
+</head>
+<body>
+<button id="btn1">按三列</button>
+<button id="btn2">按四列</button>
+<div id="box">
+    <button>第1个</button>
+    <button>第2个</button>
+    <button>第3个</button>
+    <button>第4个</button>
+    <button>第5个</button>
+    <button>第6个</button>
+    <button>第7个</button>
+    <button>第8个</button>
+    <button>第9个</button>
+    <button>第10个</button>
+    <button>第11个</button>
+    <button>第12个</button>
+    <button>第13个</button>
+    <button>第14个</button>
+    <button>第15个</button>
+    <button>第16个</button>
+</div>
+<script>
+    window.onload = function () {
+        var btn1 = document.getElementById('btn1');
+        var btn2 = document.getElementById('btn2');
+        var btn3 = document.getElementById('box').getElementsByTagName('button');
+
+        btn1.onclick=function() {
+           /* var btn3 = document.getElementById('box').getElementsByTagName('button');
+            for (var i = 0; i < btn3.length; i++) {
+                btn3[i].style.position = 'absolute';
+                //求每一个按钮的行
+                var row = parseInt(i / 3);
+                //求每一个按钮的列
+                var col = i % 3;
+
+                //计算left
+                var leftValue = col * (100 + 10);
+                //计算top
+                var topValue = row * (100 + 10);
+
+                btn3[i].style.left = leftValue + 'px';
+//                    this.style.left = leftValue + 'px';
+                btn3[i].style.top = topValue + 'px';
+//                    this.style.top = topValue + 'px';
+
+            }*/
+            paiXu(3);
+        };
+        btn2.onclick=function() {
+            /*var btn3 = document.getElementById('box').getElementsByTagName('button');
+            for (var i = 0; i < btn3.length; i++) {
+                btn3[i].style.position = 'absolute';
+                //求每一个按钮的行
+                var row = parseInt(i / 4);
+                //求每一个按钮的列
+                var col = i % 4;
+
+                //计算leift
+                var leftValue = col * (100 + 10);
+                //计算top
+                var topValue = row * (100 + 10);
+
+                btn3[i].style.left = leftValue + 'px';
+                btn3[i].style.top = topValue + 'px';
+
+            }*/
+            paiXu(4);
+        };
+        function paiXu(a){
+
+            for (var i = 0; i < btn3.length; i++) {
+                btn3[i].style.position = 'absolute';
+                //求每一个按钮的行
+                var row = parseInt(i / a);
+                //求每一个按钮的列
+                var col = i % a;
+
+                //计算leift
+                var leftValue = col * (100 + 10);
+                //计算top
+                var topValue = row * (100 + 10);
+
+                btn3[i].style.left = leftValue + 'px';
+                btn3[i].style.top = topValue + 'px';
+
+            }
+        }
+    }
+</script>
+</body>
+</html>
